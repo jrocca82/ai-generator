@@ -44,6 +44,7 @@ const AIGenerator = () => {
     const data = await response.json();
 
     if (response.status === 503) {
+      setErrorMessage(`Operation timed out. Trying again...`);
       return;
     }
 
