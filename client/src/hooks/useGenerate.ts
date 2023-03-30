@@ -4,7 +4,7 @@ import { useMutation } from "react-query";
 import { InputBodyType } from "../schema";
 
 const generateImage = async (body: InputBodyType) => {
-  const { data } = await axios.post("api/generate", {
+  const { data } = await axios.post("/api/generate", {
     headers: {
       "Content-Type": "image/jpeg",
     },
