@@ -1,6 +1,5 @@
 import { Flex, Button, Input, Heading, Text, Image } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 
 import { useGenerate } from "../hooks/useGenerate";
@@ -15,10 +14,6 @@ const AIGenerator = () => {
   });
 
   const onSubmit = handleSubmit((formData) => mutate(formData));
-
-  useEffect(() => {
-    console.log(formError);
-  }, [formError]);
 
   return (
     <Flex
