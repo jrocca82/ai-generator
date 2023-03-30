@@ -6,7 +6,13 @@ import { useGenerate } from "../hooks/useGenerate";
 import { InputBodyType, inputSchema } from "../schema";
 
 const AIGenerator = () => {
-  const { mutate, isLoading, error: formError, data } = useGenerate();
+  const {
+    mutate,
+    isLoading,
+    error: formError,
+    data,
+    failureCount,
+  } = useGenerate();
 
   const { handleSubmit, control } = useForm<InputBodyType>({
     resolver: zodResolver(inputSchema),
@@ -48,9 +54,16 @@ const AIGenerator = () => {
               onBlur={onBlur}
               width="80%"
             />
-            <Text marginTop="5px" color="red">
-              {formError?.toString() || error?.message}
-            </Text>
+            <Flex minHeight="30px">
+              <Text marginTop="5px" color="red">
+                {formError?.toString() || error?.message}
+              </Text>
+              <Text marginTop="5px" color="red">
+                {failureCount > 0 &&
+                  !formError &&
+                  "Failed to generate image, trying again..."}
+              </Text>
+            </Flex>
             <Button
               color="black"
               bgColor="yellow"

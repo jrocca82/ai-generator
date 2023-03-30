@@ -14,4 +14,9 @@ const generateImage = async (body: InputBodyType) => {
   return data;
 };
 
-export const useGenerate = () => useMutation({ mutationFn: generateImage });
+export const useGenerate = () =>
+  useMutation({
+    mutationFn: generateImage,
+    retry: 20,
+    retryDelay: 1000,
+  });
