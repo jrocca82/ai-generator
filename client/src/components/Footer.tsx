@@ -2,7 +2,6 @@ import { Flex, Text } from "@chakra-ui/react";
 
 const Footer = () => (
   <Flex
-    position="absolute"
     bottom="0px"
     w="100%"
     justifyContent="center"

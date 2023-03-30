@@ -7,7 +7,6 @@ const Header = () => (
     flexDirection="column"
     justifyContent="center"
     alignItems="center"
-    position="absolute"
     top="0px"
     borderBottom="solid 1px grey"
     width="100%"

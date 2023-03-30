@@ -27,6 +27,7 @@ const NavMenu = () => {
           borderRadius="5px"
           flexDirection="column"
           width="200px"
+          zIndex={10}
         >
           <Link href="/">
             <Text borderBottom="solid 1px grey" padding="10px">
@@ -35,11 +36,11 @@ const NavMenu = () => {
           </Link>
           <Link href="/about">
             <Text my="5px" borderBottom="solid 1px grey" padding="10px">
-              About: AI Training
+              About the Project
             </Text>
           </Link>
           <Link href="/builder">
-            <Text padding="10px">About: Jo Rocca</Text>
+            <Text padding="10px">About the Builder</Text>
           </Link>
         </Flex>
       )}

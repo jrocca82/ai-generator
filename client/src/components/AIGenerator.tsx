@@ -22,14 +22,9 @@ const AIGenerator = () => {
   const onSubmit = handleSubmit((formData) => mutate(formData));
 
   return (
-    <Flex
-      flexDir="column"
-      marginTop="150px"
-      alignItems="center"
-      justifyContent="center"
-    >
+    <Flex flexDir="column" alignItems="center" justifyContent="center">
       <Heading fontSize="20px" margin="15px">
-        Type a prompt and hit &ldquo;generate&ldquo;. Be sure to use
+        Type a prompt and hit &ldquo;Generate Image&ldquo;. Be sure to use
         &ldquo;jorocca&ldquo; in your prompt to get an image of me!
       </Heading>
       <Controller
