@@ -4,13 +4,16 @@ import NavMenu from "./NavMenu";
 
 const Header = () => (
   <Flex
+    flexDirection="column"
+    justifyContent="center"
     alignItems="center"
-    justifyContent="space-evenly"
-    w="100%"
+    position="absolute"
+    top="0px"
     borderBottom="solid 1px grey"
-    paddingY="30px"
+    width="100%"
+    height="150px"
   >
-    <Heading alignSelf="center">AI Avatar Generator</Heading>
+    <Heading>AI Avatar Generator</Heading>
     <NavMenu />
   </Flex>
 );

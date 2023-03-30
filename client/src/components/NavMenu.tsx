@@ -5,17 +5,12 @@ import { useState } from "react";
 const NavMenu = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   return (
-    <Flex
-      flexDirection="column"
-      alignItems="center"
-      position="absolute"
-      right="50px"
-      width="300px"
-    >
+    <Flex>
       <Button
         width="120px"
         bgColor="yellow"
         color="black"
+        margin="10px"
         onClick={() => setShowMenu((v) => !v)}
       >
         Learn More{" "}

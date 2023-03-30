@@ -18,7 +18,7 @@ const Home = () => (
       justifyContent="center"
       alignItems="center"
       minH="100vh"
-      maxW="100vw"
+      width="100vw"
     >
       <Header />
       <AIGenerator />

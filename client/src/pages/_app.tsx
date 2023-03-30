@@ -1,6 +1,7 @@
 /* eslint-disable react/function-component-definition -- not needed */
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const theme = extendTheme({
   styles: {
@@ -13,10 +14,14 @@ const theme = extendTheme({
   },
 });
 
+const queryClient = new QueryClient();
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
     </ChakraProvider>
   );
 }

@@ -9,11 +9,10 @@ const bufferToBase64 = (buffer: ArrayBuffer) => {
   return `data:image/png;base64,${base64}`;
 };
 
-export default async function handler(
+const handler = async (
   req: NextApiRequest,
   res: NextApiResponse<{ image: string }>
-) {
-  const { input } = JSON.parse(req.body);
+) => {
   const response = await fetch(
     "https://api-inference.huggingface.co/models/loluvulol/sd-1-5-jorocca",
     {
@@ -23,7 +22,7 @@ export default async function handler(
       },
       method: "POST",
       body: JSON.stringify({
-        inputs: input,
+        inputs: req.body.input,
       }),
     }
   );
@@ -32,10 +31,9 @@ export default async function handler(
     const buffer = await response.arrayBuffer();
     const base64 = bufferToBase64(buffer);
     res.status(200).json({ image: base64 });
-  } else if (response.status === 503) {
-    const json = await response.json();
-    res.status(503).json(json);
   } else {
     res.status(response.status).json({ image: response.statusText });
   }
-}
+};
+
+export default handler;
