@@ -22,7 +22,7 @@ const handler = async (
       },
       method: "POST",
       body: JSON.stringify({
-        inputs: req.body.input,
+        inputs: req.body.body.input,
       }),
     }
   );

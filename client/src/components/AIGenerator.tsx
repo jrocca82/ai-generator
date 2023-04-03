@@ -23,7 +23,7 @@ const AIGenerator = () => {
 
   return (
     <Flex flexDir="column" alignItems="center" justifyContent="center">
-      <Heading fontSize="20px" margin="15px">
+      <Heading fontSize="20px" margin="15px" textAlign="center">
         Type a prompt and hit &ldquo;Generate Image&ldquo;. Be sure to use
         &ldquo;jorocca&ldquo; in your prompt to get an image of me!
       </Heading>
